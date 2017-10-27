@@ -76,7 +76,7 @@ public class BankStore {
 
     private Key getEntityKey(String entityName) {
         Key entityKey;
-        entityKey = datastore.newKeyFactory().setKind(kind).newKey(Long.parseLong(entityName));
+        entityKey = datastore.newKeyFactory().setKind(kind).newKey(entityName);
         return entityKey;
     }
 

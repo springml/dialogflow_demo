@@ -58,7 +58,8 @@ public class BankingService {
         WebhookResponse response = new WebhookResponse("The user cannot be validated","the user cant be validated");
         if(otpManager.isValidOtp(userId,otp)){
             accBalance = Long.parseLong(BankStore.getInstance().getProperty(userId,"AccountBalance"));
-            response = new WebhookResponse("The user :"+userId +" has current balance of "+accBalance,"The user :"+userId +" has current balance of "+accBalance);
+            String customerName = BankStore.getInstance().getProperty(userId,"CustomerName");
+            response = new WebhookResponse("The user :"+customerName +" has current balance of "+accBalance,"The user :"+userId +" has current balance of "+accBalance);
         }
         return response;
     }
