@@ -1,6 +1,6 @@
 runtime: java
 env: flex
-service: default
+service: bankingapp
 
 runtime_config:  # Optional
   jdk: openjdk8

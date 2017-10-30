@@ -52,6 +52,12 @@
             <artifactId>google-cloud-datastore</artifactId>
             <version>1.0.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.cloud/google-cloud-pubsub -->
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-pubsub</artifactId>
+            <version>0.26.0-beta</version>
+        </dependency>
 
     </dependencies>
     <build>
