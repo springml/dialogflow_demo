@@ -1,0 +1,8 @@
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+206.169.177.68 - - [01/Nov/2017 22:58:53] "GET / HTTP/1.1" 200 -
+76.21.110.74 - - [01/Nov/2017 22:59:16] "GET / HTTP/1.1" 200 -
+76.21.110.74 - - [01/Nov/2017 22:59:30] "GET / HTTP/1.1" 200 -
+76.21.110.74 - - [01/Nov/2017 23:00:09] "GET / HTTP/1.1" 200 -
