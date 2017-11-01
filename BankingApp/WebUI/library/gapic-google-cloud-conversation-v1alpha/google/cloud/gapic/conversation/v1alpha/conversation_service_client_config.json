@@ -1,0 +1,179 @@
+{
+  "interfaces": {
+    "google.cloud.conversation.v1alpha.ConversationService": {
+      "retry_codes": {
+        "idempotent": [
+          "DEADLINE_EXCEEDED",
+          "UNAVAILABLE"
+        ],
+        "non_idempotent": []
+      },
+      "retry_params": {
+        "simple_operation": {
+          "initial_retry_delay_millis": 100,
+          "retry_delay_multiplier": 1.3,
+          "max_retry_delay_millis": 5000,
+          "initial_rpc_timeout_millis": 5000,
+          "rpc_timeout_multiplier": 1.0,
+          "max_rpc_timeout_millis": 5000,
+          "total_timeout_millis": 10000
+        },
+        "batch_operation": {
+          "initial_retry_delay_millis": 100,
+          "retry_delay_multiplier": 1.3,
+          "max_retry_delay_millis": 60000,
+          "initial_rpc_timeout_millis": 60000,
+          "rpc_timeout_multiplier": 1.0,
+          "max_rpc_timeout_millis": 60000,
+          "total_timeout_millis": 600000
+        },
+        "detect_intent": {
+          "initial_retry_delay_millis": 100,
+          "retry_delay_multiplier": 1.3,
+          "max_retry_delay_millis": 60000,
+          "initial_rpc_timeout_millis": 220000,
+          "rpc_timeout_multiplier": 1.0,
+          "max_rpc_timeout_millis": 220000,
+          "total_timeout_millis": 600000
+        }
+      },
+      "methods": {
+        "DetectIntent": {
+          "timeout_millis": 220000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "detect_intent"
+        },
+        "StreamingDetectIntent": {
+          "timeout_millis": 220000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "detect_intent"
+        },
+        "ListEntityTypes": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "GetEntityType": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "CreateEntityType": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "UpdateEntityType": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "DeleteEntityType": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "BatchUpdateEntityTypes": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "batch_operation"
+        },
+        "BatchCreateEntities": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "batch_operation"
+        },
+        "BatchUpdateEntities": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "batch_operation"
+        },
+        "BatchDeleteEntities": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "batch_operation"
+        },
+        "ListIntents": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "GetIntent": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "CreateIntent": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "UpdateIntent": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "DeleteIntent": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "GetSessionEntityType": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "CreateSessionEntityType": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "UpdateSessionEntityType": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "DeleteSessionEntityType": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "ListContexts": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "GetContext": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "CreateContext": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "UpdateContext": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "DeleteContext": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        },
+        "BatchCreateContexts": {
+          "timeout_millis": 60000,
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "batch_operation"
+        },
+        "DeleteAllContexts": {
+          "timeout_millis": 5000,
+          "retry_codes_name": "idempotent",
+          "retry_params_name": "simple_operation"
+        }
+      }
+    }
+  }
+}
