@@ -46,8 +46,7 @@
     console.log("This is after python function call")
     
     var result_json = JSON.parse(response);
-    
-    setResponseJSON(atob(result_json["object"]));
+    //setResponseJSON(atob(result_json["object"]));
   
     setResponseOnNode(result_json["text"], responseNode);
   }
@@ -75,7 +74,7 @@
 
   function setResponseJSON(response) {
     var node = document.getElementById("jsonResponse");
-    node.innerHTML = response 
+    node.innerHTML = response ? response: ""
     //node.innerHTML = JSON.stringify(response, null, 2);
   }
 
@@ -83,7 +82,7 @@
     //alert("in send req")
 
     var URL = "/run_test_intent?input_string=" + value + "&sessionid=" + sessionid
-    //var URL = "https://conversation.googleapis.com/v1alpha/projects/dialogflow-enterprise-demo/agents/dialogflow-enterprise-demo/intents"
+   //var URL = "https://conversation.googleapis.com/v1alpha/projects/dialogflow-enterprise-demo/agents/dialogflow-enterprise-demo/intents"
 
     //var request = "{'query_input': {'text': {'text': ' " + value + "','language_code': 'en-US'}}}";
     //request = "{  'query_input': {    'text': {      'text': 'start stopwatch',      'language_code': 'en-US'    }  }}"
