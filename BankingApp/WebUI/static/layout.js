@@ -46,7 +46,11 @@
     console.log("This is after python function call")
     
     var result_json = JSON.parse(response);
-    setResponseJSON(atob(result_json["object"]));
+    
+    if (document.getElementById('jsonResponse') != null){
+	console.log('displaying payload')
+	setResponseJSON(atob(result_json["object"]));
+	}
   
     setResponseOnNode(result_json["text"], responseNode);
   }
