@@ -14,7 +14,12 @@ public class CommonUtil {
             SecureRandom number = SecureRandom.getInstance("SHA1PRNG");
             // Generate 20 integers 0..20
             for (int i = 0; i < size; i++) {
-                generatedToken.append(number.nextInt(9));
+                if(i==0){
+                    generatedToken.append(9);
+                }
+                else {
+                    generatedToken.append(number.nextInt(9));
+                }
             }
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();

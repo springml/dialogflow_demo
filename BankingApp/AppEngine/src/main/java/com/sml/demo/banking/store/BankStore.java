@@ -11,7 +11,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.GeneralSecurityException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 import java.util.logging.Logger;
 
 /**
@@ -58,11 +60,13 @@ public class BankStore {
         Entity userBankRecord = datastore.get(entityKey);
         if(userBankRecord!=null) {
             try {
-                if(propertyName.equalsIgnoreCase("MobileNumber"))
+                if(propertyName.equalsIgnoreCase("AccountBalance") || (propertyName.equalsIgnoreCase("CheckingAccountBalance"))) {
+                    value += (userBankRecord.getLong(propertyName));
+                }
+                else {
                     value = userBankRecord.getString(propertyName);
-                else
-                    if(propertyName.equalsIgnoreCase("AccountBalance"))
-                        value +=(userBankRecord.getLong(propertyName));
+
+                }
 
             } catch (DatastoreException dataStoreException) {
                 logger.warning("Exception while getting property value for the given entity" + dataStoreException.getMessage());
@@ -72,6 +76,25 @@ public class BankStore {
             logger.warning("No record found");
         }
         return value;
+    }
+
+    public void updateEntity(String entityKey,HashMap properties) {
+        Key entityKeyObj = getEntityKey(entityKey);
+        Entity.Builder entityBuilder = Entity.newBuilder(entityKeyObj);
+
+        for (Object propKeyObj : properties.keySet()) {
+            String propKey = (String) propKeyObj;
+
+           if(propKey.equalsIgnoreCase("AccountBalance")||propKey.equalsIgnoreCase("CheckingAccountBalance")){
+               entityBuilder.set(propKey,(long) properties.get(propKey));
+           }
+           else{
+               entityBuilder.set(propKey, properties.get(propKey).toString());
+
+           }
+        }
+        Entity entity = entityBuilder.build();
+        datastore.put(entity);
     }
 
     private Key getEntityKey(String entityName) {
