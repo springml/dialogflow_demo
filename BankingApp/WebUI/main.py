@@ -19,6 +19,10 @@ def detect_test():
 	result = _detect_text_intent("dialogflow-enterprise-demo", "NewAgent", request.args["sessionid"], request.args["input_string"], "en-US")
 	result= '{"text": "%s", "object": "%s"}' %(result.fulfillment.text.encode('ascii', 'ignore'), base64.b64encode(str(result).encode('ascii', 'ignore')))
 	return result 
+
+@app.route('/dev.html')
+def render_dev():
+	return render_template('dev.html')
 	
 if __name__ == '__main__':
 	port = int(os.environ.get("PORT", 8000))

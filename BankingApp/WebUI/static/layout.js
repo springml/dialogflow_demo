@@ -46,7 +46,7 @@
     console.log("This is after python function call")
     
     var result_json = JSON.parse(response);
-    //setResponseJSON(atob(result_json["object"]));
+    setResponseJSON(atob(result_json["object"]));
   
     setResponseOnNode(result_json["text"], responseNode);
   }
