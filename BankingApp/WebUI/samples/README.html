@@ -1,0 +1,161 @@
+<p><img src="https://avatars2.githubusercontent.com/u/2810941?v=3&s=96" alt="Google Cloud Platform logo" title="Google Cloud Platform" align="right" height="96" width="96"/></p>
+<h1 id="google-cloud-conversation-engine-api-python-samples">Google Cloud Conversation Engine API Python Samples</h1>
+<p>The <a href="https://cloud.google.com/conversation/docs/">Cloud Conversation Engine</a> is
+an enterprise-grade NLU platform that makes it easy for developers to design and
+integrate conversational user interfaces into mobile apps, web applications,
+devices, and bots.</p>
+<p>This sample sets up an agent to handle pizza delivery conversations and shows
+how to query intents.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#samples">Samples</a><ul>
+<li><a href="#sample-agent">Sample Agent</a></li>
+<li><a href="#detecting-intents">Detecting intents</a></li>
+</ul>
+</li>
+<li><a href="#running-the-tests">Running the Tests</a></li>
+</ul>
+<h2 id="prerequisite">Prerequisite</h2>
+<ol>
+<li><p>Install <a href="https://pip.pypa.io">Pip</a>.</p>
+</li>
+<li><p>Change directory to the samples folder:</p>
+<pre><code>cd samples
+</code></pre></li>
+<li><p>Create a new Google Cloud project.</p>
+</li>
+<li><p>Enable Cloud Conversation Engine API for your Google Cloud project by doing
+the following:</p>
+<ul>
+<li>Go to API Manager &gt; Library.</li>
+<li>Search for &quot;Cloud Conversation Engine API&quot;.</li>
+<li>Click the API in the search results, then click &quot;ENABLE&quot; button.</li>
+</ul>
+<p>If you don&#39;t see Cloud Conversation Engine API, please contact
+cloud-conversation-engine-users@googlegroups.com.</p>
+</li>
+<li><p>Create an api.ai agent and associate it with the Google Cloud project with
+Cloud Conversation Engine API enabled:</p>
+<ul>
+<li>Go to <a href="https://api.ai">https://api.ai</a>. Log in or sign up.</li>
+<li>Create an agent.</li>
+<li>On the <a href="https://api.ai/docs/agents#creating">create agent UI</a>, set Google project to the Google
+Cloud project with Cloud Conversation Engine API enabled.</li>
+</ul>
+<p>We recommend using the <a href="#sample-agent">sample agent</a>.</p>
+</li>
+<li><p>Set the <code>GCLOUD_PROJECT</code> environment variable to the Google Project ID
+associated with the agent:</p>
+<p>Linux:</p>
+<pre><code>export GCLOUD_PROJECT=your-project-id
+</code></pre><p>Windows:</p>
+<pre><code>set GCLOUD_PROJECT=your-project-id
+</code></pre><p>Windows (PowerShell):</p>
+<pre><code>$env:GCLOUD_PROJECT=&quot;your-project-id&quot;
+</code></pre></li>
+<li><p>Obtain service account authentication credentials.</p>
+<p>Cloud Conversation Engine requires using service accounts for
+authentication. Follow the instructions below to create a service account
+and use it for authentication:</p>
+<ul>
+<li>Go to API Manager -&gt; Credentials</li>
+<li>Click &quot;Create Credentials&quot;, and create a service account or <a href="https://console.cloud.google.com/project/_/apiui/credential/serviceaccount">click
+here</a></li>
+<li>Choose &quot;Service Account key&quot; in the pull down menu</li>
+<li>In the Service Account pulldown, choose &quot;New service account&quot;</li>
+<li>Choose name for &quot;service account name&quot; e.g., &quot;cce-test-account&quot;</li>
+<li>Choose role &quot;Project &gt; Owner&quot; for service account</li>
+<li>Mark &quot;JSON&quot; as the key type</li>
+<li>Click &quot;Create&quot;</li>
+<li>Download the JSON for this service account, and set the
+<code>GOOGLE_APPLICATION_CREDENTIALS</code> environment variable to point to the
+file containing the JSON credentials. Set the
+<code>GOOGLE_APPLICATION_CREDENTIALS</code> environment variable:</li>
+</ul>
+<p>Linux:</p>
+<pre><code>export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service_account_file.json
+</code></pre><p>Windows:</p>
+<pre><code>set GOOGLE_APPLICATION_CREDENTIALS=/path/to/service_account_file.json
+</code></pre><p>Windows (PowerShell):</p>
+<pre><code>$env:GOOGLE_APPLICATION_CREDENTIALS=&quot;/path/to/service_account_file.json&quot;
+</code></pre><p><strong>Note for code running on GCE, GAE, or other environments:</strong></p>
+<p>On Google App Engine, the credentials should be found automatically.</p>
+<p>On Google Compute Engine, the credentials should be found automatically, but
+require that you create the instance with the correct scopes.</p>
+<pre><code>gcloud compute instances create --scopes=&quot;https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/compute,https://www.googleapis.com/auth/compute.readonly&quot; test-instance
+</code></pre><p>If you did not create the instance with the right scopes, you can still
+upload a JSON service account and set <code>GOOGLE_APPLICATION_CREDENTIALS</code> as
+described.</p>
+<p>Read more about <a href="https://cloud.google.com/docs/authentication#projects_and_resources">Google Cloud Platform Authentication</a>.</p>
+</li>
+<li><p>Install dependencies in a virtualenv:</p>
+<pre><code class="lang-shell">cd ..
+source install_client_library.sh
+cd -
+</code></pre>
+</li>
+</ol>
+<h2 id="samples">Samples</h2>
+<h3 id="sample-agent">Sample agent</h3>
+<p>The <a href="./SampleAgent.zip">Sample Agent</a> zip file contains an agent for a pizza
+ordering and delivery service. To use the sample agent, go to the <a href="https://api.ai/docs/agents#export">Export and
+Import</a> tab of the agent settings page. Click &quot;Restore from
+zip&quot; and upload the zip file.</p>
+<p>Use the <a href="#detecting-intents">intent detection samples</a> to test this agent.</p>
+<h3 id="detecting-intents">Detecting intents</h3>
+<pre><code>usage: python detect_intent.py [-h] [--project_id PROJECT_ID]
+                        [--session_id SESSION_ID]
+                        [--language_code LANGUAGE_CODE] [--encoding ENCODING]
+                        [--sample_rate_hertz SAMPLE_RATE_HERTZ]
+                        {text,event,audio,stream} inputs [inputs ...]
+
+Cloud Conversation Engine API DetectIntent() Python sample.
+
+See https://cloud.google.com/speech/docs/basics for a discussion of the similar
+(not equal!) options for the Speech API.
+
+Examples:
+  python detect_intent.py -h
+  python detect_intent.py text &quot;Order a large pizza&quot; &quot;tuna&quot; &quot;1600 Amphitheatre Pkwy&quot; &quot;check&quot;
+  python detect_intent.py event order_pizza
+  python detect_intent.py audio resources/pizza_order.wav \
+      --sample_rate_hertz=22050
+  python detect_intent.py stream resources/pizza_order.wav \
+      --sample_rate_hertz=22050
+
+positional arguments:
+  {text,event,audio,stream}
+                        Command to run.
+  inputs                Inputs for the command.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --project_id PROJECT_ID
+                        Project/agent id. Defaults to the value of the
+                        GCLOUD_PROJECT or GOOGLE_CLOUD_PROJECT environment
+                        variables.
+  --session_id SESSION_ID
+                        Identifier of the DetectIntent session. Defaults to a
+                        random UUID.
+  --language_code LANGUAGE_CODE
+                        Language code of the query. Defaults to &quot;en-US&quot;.
+  --encoding ENCODING   Encoding of the input audio. Defaults to
+                        AUDIO_ENCODING_LINEAR16. See
+                        https://cloud.google.com/speech/docs/basics#audio-
+                        encodings.
+  --sample_rate_hertz SAMPLE_RATE_HERTZ
+                        Sample rate of the input audio. Only required if the
+                        input audio is in raw format. See
+                        https://cloud.google.com/speech/docs/basics#sample-
+                        rates.
+</code></pre><h2 id="running-the-tests">Running the Tests</h2>
+<ol>
+<li><p>Set <strong>GCLOUD_PROJECT</strong> and <strong>GOOGLE_APPLICATION_CREDENTIALS</strong> environment
+variables.</p>
+</li>
+<li><p>Run the tests:</p>
+<pre><code class="lang-shell">python *_test.py
+</code></pre>
+</li>
+</ol>

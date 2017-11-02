@@ -1,0 +1,335 @@
+Traceback (most recent call last):
+  File "main.py", line 25, in <module>
+    app.run(debug=True, host='0.0.0.0', port=port)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 841, in run
+    run_simple(host, port, self, **options)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 720, in run_simple
+    s.bind((hostname, port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+Traceback (most recent call last):
+  File "main.py", line 25, in <module>
+    app.run(debug=True, host='0.0.0.0', port=port)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 841, in run
+    run_simple(host, port, self, **options)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 720, in run_simple
+    s.bind((hostname, port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+Traceback (most recent call last):
+  File "main.py", line 25, in <module>
+    app.run(debug=True, host='0.0.0.0', port=port)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 841, in run
+    run_simple(host, port, self, **options)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 720, in run_simple
+    s.bind((hostname, port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+206.169.177.68 - - [01/Nov/2017 20:05:45] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:05:56] "GET /run_test_intent?input_string=hey%20&sessionid=1509566745306 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/dialogflow_demo/BankingApp/WebUI/main.py", line 19, in detect_test
+    result = _detect_text_intent("dialogflow-enterprise-demo", "NewAgent", request.args["sessionid"], request.args["input_string"], "en-US")
+  File "/root/dialogflow_demo/BankingApp/WebUI/detect_intent.py", line 104, in _detect_text_intent
+    session=session_path, query_input=query_input)
+  File "/root/BankingChatbot/library/gapic-google-cloud-conversation-v1alpha/google/cloud/gapic/conversation/v1alpha/conversation_service_client.py", line 633, in detect_intent
+    return self._detect_intent(request, options)
+  File "/usr/local/lib/python2.7/dist-packages/google/gax/api_callable.py", line 452, in inner
+    return api_caller(api_call, this_settings, request)
+  File "/usr/local/lib/python2.7/dist-packages/google/gax/api_callable.py", line 438, in base_caller
+    return api_call(*args)
+  File "/usr/local/lib/python2.7/dist-packages/google/gax/api_callable.py", line 380, in inner
+    gax.errors.create_error('RPC failed', cause=exception))
+  File "/usr/local/lib/python2.7/dist-packages/google/gax/api_callable.py", line 376, in inner
+    return a_func(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/google/gax/retry.py", line 68, in inner
+    return a_func(*updated_args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/grpc/_channel.py", line 507, in __call__
+    return _end_unary_response_blocking(state, call, False, deadline)
+  File "/usr/local/lib/python2.7/dist-packages/grpc/_channel.py", line 455, in _end_unary_response_blocking
+    raise _Rendezvous(state, None, None, deadline)
+GaxError: GaxError(RPC failed, caused by <_Rendezvous of RPC that terminated with (StatusCode.PERMISSION_DENIED, Request had insufficient authentication scopes.)>)
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+206.169.177.68 - - [01/Nov/2017 20:07:24] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:07:28] "GET /run_test_intent?input_string=hey%20&sessionid=1509566844495 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:07:32] "GET /run_test_intent?input_string=balance%20&sessionid=1509566844495 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:07:36] "GET /run_test_intent?input_string=Savings%20&sessionid=1509566844495 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:08:53] "GET /run_test_intent?input_string=10005&sessionid=1509566844495 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:15:51] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:15:52] "GET / HTTP/1.1" 200 -
+76.21.110.74 - - [01/Nov/2017 20:16:29] "GET / HTTP/1.1" 200 -
+76.21.110.74 - - [01/Nov/2017 20:16:36] "GET /run_test_intent?input_string=hi&sessionid=1509567389869 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:16:51] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:31:49] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:32:51] "GET / HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+206.169.177.68 - - [01/Nov/2017 20:35:20] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:35:27] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 20:35:47] "GET /run_test_intent?input_string=hey%20&sessionid=1509568528004 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:17:12] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:17:12] "GET /ApiAi.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:17:12] "GET /demoFunctions.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:17:13] "GET /layout.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:17:26] "GET /run_test_intent?input_string=hey&sessionid=1509571033067 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:17:32] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [01/Nov/2017 21:17:56] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [01/Nov/2017 21:26:25] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:26:29] "GET /run_test_intent?input_string=hey%20&sessionid=1509571585511 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:26:32] "GET /ApiAi.js.map HTTP/1.1" 404 -
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+206.169.177.68 - - [01/Nov/2017 21:29:15] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:29:16] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [01/Nov/2017 21:29:18] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:29:19] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [01/Nov/2017 21:29:23] "GET /run_test_intent?input_string=hey%20&sessionid=1509571758926 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:31:12] "GET /ApiAi.js.map HTTP/1.1" 404 -
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+206.169.177.68 - - [01/Nov/2017 21:35:13] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:35:13] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [01/Nov/2017 21:35:26] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:35:26] "GET /ApiAi.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:35:26] "GET /demoFunctions.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:35:26] "GET /layout.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:35:26] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [01/Nov/2017 21:35:31] "GET /run_test_intent?input_string=hey%20&sessionid=1509572127023 HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+206.169.177.68 - - [01/Nov/2017 21:38:27] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:38:27] "GET /ApiAi.js.map HTTP/1.1" 404 -
+Traceback (most recent call last):
+  File "main.py", line 25, in <module>
+    app.run(debug=True, host='0.0.0.0', port=port)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 841, in run
+    run_simple(host, port, self, **options)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 720, in run_simple
+    s.bind((hostname, port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+206.169.177.68 - - [01/Nov/2017 21:40:32] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:40:32] "GET /ApiAi.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:40:32] "GET /demoFunctions.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:40:32] "GET /layout.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:40:32] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [01/Nov/2017 21:40:38] "GET /run_test_intent?input_string=hey%20&sessionid=1509572432851 HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+206.169.177.68 - - [01/Nov/2017 21:42:48] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:42:48] "GET /ApiAi.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:42:48] "GET /demoFunctions.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:42:49] "GET /layout.js HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:42:49] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [01/Nov/2017 21:42:53] "GET /run_test_intent?input_string=hey%20&sessionid=1509572569212 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:42:58] "GET /run_test_intent?input_string=Balance%20&sessionid=1509572569212 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:43:01] "GET /run_test_intent?input_string=Savings&sessionid=1509572569212 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:43:04] "GET /run_test_intent?input_string=10001&sessionid=1509572569212 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:43:21] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:43:25] "GET /run_test_intent?input_string=hey%20&sessionid=1509572601622 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:43:29] "GET /run_test_intent?input_string=balance%20&sessionid=1509572601622 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:43:32] "GET /run_test_intent?input_string=Savings&sessionid=1509572601622 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:43:37] "GET /run_test_intent?input_string=10001&sessionid=1509572601622 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:43:42] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:44:31] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:44:31] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [01/Nov/2017 21:44:35] "GET /run_test_intent?input_string=hey%20&sessionid=1509572671283 HTTP/1.1" 200 -
+206.169.177.68 - - [01/Nov/2017 21:48:00] "GET / HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+76.21.2.107 - - [02/Nov/2017 17:08:18] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:08:22] "GET /run_test_intent?input_string=hey%20&sessionid=1509642499067 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:09:42] "GET /dev.html HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:09:48] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:09:51] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:09:55] "GET /dev.html HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+76.21.2.107 - - [02/Nov/2017 17:12:38] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:13:26] "GET /run_test_intent?input_string=hey%20&sessionid=1509642758651 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:13:26] "GET /run_test_intent?input_string=&sessionid=1509642758651 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/dialogflow_demo/BankingApp/WebUI/main.py", line 19, in detect_test
+    result = _detect_text_intent("dialogflow-enterprise-demo", "NewAgent", request.args["sessionid"], request.args["input_string"], "en-US")
+  File "/root/dialogflow_demo/BankingApp/WebUI/detect_intent.py", line 104, in _detect_text_intent
+    session=session_path, query_input=query_input)
+  File "/root/BankingChatbot/library/gapic-google-cloud-conversation-v1alpha/google/cloud/gapic/conversation/v1alpha/conversation_service_client.py", line 633, in detect_intent
+    return self._detect_intent(request, options)
+  File "/usr/local/lib/python2.7/dist-packages/google/gax/api_callable.py", line 452, in inner
+    return api_caller(api_call, this_settings, request)
+  File "/usr/local/lib/python2.7/dist-packages/google/gax/api_callable.py", line 438, in base_caller
+    return api_call(*args)
+  File "/usr/local/lib/python2.7/dist-packages/google/gax/api_callable.py", line 380, in inner
+    gax.errors.create_error('RPC failed', cause=exception))
+  File "/usr/local/lib/python2.7/dist-packages/google/gax/api_callable.py", line 376, in inner
+    return a_func(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/google/gax/retry.py", line 68, in inner
+    return a_func(*updated_args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/grpc/_channel.py", line 507, in __call__
+    return _end_unary_response_blocking(state, call, False, deadline)
+  File "/usr/local/lib/python2.7/dist-packages/grpc/_channel.py", line 455, in _end_unary_response_blocking
+    raise _Rendezvous(state, None, None, deadline)
+InvalidArgumentError: InvalidArgumentError(RPC failed, caused by <_Rendezvous of RPC that terminated with (StatusCode.INVALID_ARGUMENT, Input text not set.)>)
+76.21.2.107 - - [02/Nov/2017 17:13:29] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:13:36] "GET /dev.html HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:13:39] "GET /run_test_intent?input_string=hey%20&sessionid=1509642816809 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:13:45] "GET /run_test_intent?input_string=Balance%20&sessionid=1509642816809 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:13:51] "GET /run_test_intent?input_string=what%20is%20my%20balance%20&sessionid=1509642816809 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:13:58] "GET /run_test_intent?input_string=hey%20&sessionid=1509642582467 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:14:04] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:15:05] "GET /run_test_intent?input_string=hey%20&sessionid=1509642844924 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:16:00] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:16:04] "GET /run_test_intent?input_string=hey%20&sessionid=1509642961243 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:16:12] "GET /run_test_intent?input_string=What%20is%20my%20balance%20?&sessionid=1509642961243 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:16:15] "GET /dev.html HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:16:19] "GET /run_test_intent?input_string=hey%20&sessionid=1509642975984 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:16:26] "GET /run_test_intent?input_string=what%20is%20my%20balance%20?&sessionid=1509642975984 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:17:14] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:21:23] "GET /run_test_intent?input_string=shukla&sessionid=1509642961243 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:21:29] "GET /run_test_intent?input_string=shuklae&sessionid=1509642961243 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:34:51] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:34:51] "GET /demoFunctions.js HTTP/1.1" 304 -
+206.169.177.68 - - [02/Nov/2017 17:34:54] "GET /dev.html HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:34:54] "GET /ApiAi.js HTTP/1.1" 304 -
+206.169.177.68 - - [02/Nov/2017 17:34:54] "GET /layout.js HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:34:58] "GET /run_test_intent?input_string=hi&sessionid=1509644094204 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:35:05] "GET /run_test_intent?input_string=balance&sessionid=1509644094204 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:35:09] "GET /run_test_intent?input_string=check%20balance&sessionid=1509644094204 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:35:15] "GET /run_test_intent?input_string=hi&sessionid=1509644093769 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:40:27] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:40:31] "GET /run_test_intent?input_string=hi&sessionid=1509644427546 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:40:38] "GET /run_test_intent?input_string=hi&sessionid=1509644094204 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:40:44] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:41:03] "GET /run_test_intent?input_string=hi&sessionid=1509644444629 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:41:04] "GET /run_test_intent?input_string=hi&sessionid=1509644094204 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:41:25] "GET /run_test_intent?input_string=hi&sessionid=1509644444629 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:41:56] "GET /run_test_intent?input_string=hi&sessionid=1509644094204 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:42:35] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:42:39] "GET /run_test_intent?input_string=hu&sessionid=1509644555587 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:42:39] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [02/Nov/2017 17:43:12] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:43:51] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:43:51] "GET /ApiAi.js HTTP/1.1" 304 -
+206.169.177.68 - - [02/Nov/2017 17:43:51] "GET /layout.js HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:43:51] "GET /demoFunctions.js HTTP/1.1" 304 -
+206.169.177.68 - - [02/Nov/2017 17:43:51] "GET /favicon.ico HTTP/1.1" 404 -
+76.21.2.107 - - [02/Nov/2017 17:44:05] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:44:05] "GET /run_test_intent?input_string=hi&sessionid=1509644630949 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:44:16] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:44:17] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [02/Nov/2017 17:44:21] "GET /run_test_intent?input_string=hi&sessionid=1509644656820 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:44:24] "GET /run_test_intent?input_string=hey%20&sessionid=1509644645392 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:44:46] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:44:46] "GET /ApiAi.js HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:44:46] "GET /demoFunctions.js HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:44:46] "GET /layout.js HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:44:49] "GET /run_test_intent?input_string=hi&sessionid=1509644685923 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:45:05] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:45:05] "GET /ApiAi.js HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:45:05] "GET /demoFunctions.js HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:45:05] "GET /layout.js HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:45:08] "GET /run_test_intent?input_string=hey%20&sessionid=1509644705790 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:45:12] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [02/Nov/2017 17:45:21] "GET /run_test_intent?input_string=hi&sessionid=1509644094204 HTTP/1.1" 200 -
+104.37.212.169 - - [02/Nov/2017 17:47:03] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:50:27] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:50:28] "GET /dev.html HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 17:50:28] "GET /ApiAi.js.map HTTP/1.1" 404 -
+206.169.177.68 - - [02/Nov/2017 17:50:30] "GET /dev.html HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:53:11] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:53:11] "GET / HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+76.21.2.107 - - [02/Nov/2017 17:57:26] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:57:38] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:57:38] "GET /run_test_intent?input_string=hey%20&sessionid=1509645447012 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:57:38] "GET /ApiAi.js HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:57:38] "GET /demoFunctions.js HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:57:39] "GET /layout.js HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:57:42] "GET /run_test_intent?input_string=hey%20&sessionid=1509645459129 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:57:48] "GET /run_test_intent?input_string=how%20are%20you?&sessionid=1509645459129 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:57:56] "GET /dev.html HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:58:41] "GET /run_test_intent?input_string=hey!&sessionid=1509645477032 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:58:41] "GET /dev.html HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:58:45] "GET /run_test_intent?input_string=hey%20&sessionid=1509645521311 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:58:52] "GET /ApiAi.js.map HTTP/1.1" 404 -
+76.21.2.107 - - [02/Nov/2017 17:59:24] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:59:49] "GET /ApiAi.js HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:59:49] "GET /demoFunctions.js HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 17:59:49] "GET /layout.js HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 18:01:18] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 18:01:34] "GET /run_test_intent?input_string=hey%20&sessionid=1509645678307 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 18:01:41] "GET /dev.html HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 18:01:44] "GET /run_test_intent?input_string=hi%20&sessionid=1509645701372 HTTP/1.1" 200 -
+76.21.2.107 - - [02/Nov/2017 18:02:03] "GET /run_test_intent?input_string=balance%20&sessionid=1509645701372 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:03:03] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:03:07] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:03:41] "GET /run_test_intent?input_string=hi&sessionid=1509645787023 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:04:11] "GET / HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:04:11] "GET /ApiAi.js HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:04:11] "GET /demoFunctions.js HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:04:11] "GET /layout.js HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:04:14] "GET /run_test_intent?input_string=hi&sessionid=1509645850780 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:04:20] "GET /run_test_intent?input_string=balance&sessionid=1509645850780 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:04:22] "GET /dev.html HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:04:25] "GET /run_test_intent?input_string=hi&sessionid=1509645861974 HTTP/1.1" 200 -
+206.169.177.68 - - [02/Nov/2017 18:04:27] "GET /run_test_intent?input_string=balance&sessionid=1509645861974 HTTP/1.1" 200 -

@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.rst
+gapic_google_cloud_conversation_v1alpha.egg-info/PKG-INFO
+gapic_google_cloud_conversation_v1alpha.egg-info/SOURCES.txt
+gapic_google_cloud_conversation_v1alpha.egg-info/dependency_links.txt
+gapic_google_cloud_conversation_v1alpha.egg-info/namespace_packages.txt
+gapic_google_cloud_conversation_v1alpha.egg-info/requires.txt
+gapic_google_cloud_conversation_v1alpha.egg-info/top_level.txt
+google/__init__.py
+google/cloud/__init__.py
+google/cloud/gapic/__init__.py
+google/cloud/gapic/conversation/__init__.py
+google/cloud/gapic/conversation/v1alpha/__init__.py
+google/cloud/gapic/conversation/v1alpha/conversation_service_client.py
+google/cloud/gapic/conversation/v1alpha/conversation_service_client_config.json
+google/cloud/gapic/conversation/v1alpha/enums.py
