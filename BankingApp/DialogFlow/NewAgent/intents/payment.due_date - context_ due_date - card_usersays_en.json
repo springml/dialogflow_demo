@@ -1,0 +1,126 @@
+[
+  {
+    "id": "74d75c09-6c62-457f-82f7-705cfc74793e",
+    "data": [
+      {
+        "text": "What about ",
+        "userDefined": false
+      },
+      {
+        "text": "shopping card",
+        "alias": "account",
+        "meta": "@account",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c826c00b-150b-4fe3-b901-87713ed273c9",
+    "data": [
+      {
+        "text": "I want to ",
+        "userDefined": false
+      },
+      {
+        "text": "check",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "shopping",
+        "alias": "account",
+        "meta": "@account",
+        "userDefined": true
+      },
+      {
+        "text": " also",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "83bf5c0a-2c52-43f4-9b6f-fcaa8046246d",
+    "data": [
+      {
+        "text": "get info about ",
+        "userDefined": false
+      },
+      {
+        "text": "gas stations",
+        "alias": "account",
+        "meta": "@account",
+        "userDefined": true
+      },
+      {
+        "text": " please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "18ba0e75-bfdd-4e31-a02a-1ab2a6132a2d",
+    "data": [
+      {
+        "text": "check",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "restaurants",
+        "alias": "account",
+        "meta": "@account",
+        "userDefined": true
+      },
+      {
+        "text": " too",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5885c0e1-c04e-4b0d-b433-32b2e5d53d46",
+    "data": [
+      {
+        "text": "what about my ",
+        "userDefined": false
+      },
+      {
+        "text": "restaurants card",
+        "alias": "account",
+        "meta": "@account",
+        "userDefined": true
+      },
+      {
+        "text": " card",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

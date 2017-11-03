@@ -1,0 +1,51 @@
+{
+  "id": "d6ff04e7-a605-4505-bd44-953cc011f1d4",
+  "name": "PlaceOrder",
+  "auto": true,
+  "contexts": [
+    "pizza_order"
+  ],
+  "responses": [
+    {
+      "resetContexts": true,
+      "action": "pizza_confirm",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "50e0dfb7-38e1-4c58-bd59-63d4700828a9",
+          "dataType": "@size",
+          "name": "size",
+          "value": "#pizza_order.size"
+        },
+        {
+          "id": "d4cfa561-d386-4432-912f-2989d6ab746e",
+          "dataType": "@topping",
+          "name": "topping",
+          "value": "#pizza_order.topping",
+          "isList": true
+        },
+        {
+          "id": "7383fb5c-5df6-4b4a-a34b-ea54d7334728",
+          "dataType": "@sys.location",
+          "name": "address",
+          "value": "#pizza_order.address"
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Sure! Getting a $size pizza with $topping and shipping to $address."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509044026307,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,39 @@
+{
+  "id": "cb02a5a6-56fd-4081-a7ea-e1edcd26bcc8",
+  "name": "payment.due_date - context: due_date - card",
+  "auto": true,
+  "contexts": [
+    "due_date"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "payment.due_date",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "9d9c165d-40cd-432d-b892-525cd6bd8b09",
+          "dataType": "@account",
+          "name": "account",
+          "value": "$account",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509086323279,
+  "fallbackIntent": false,
+  "events": []
+}

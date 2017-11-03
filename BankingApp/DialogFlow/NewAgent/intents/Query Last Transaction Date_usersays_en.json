@@ -1,0 +1,62 @@
+[
+  {
+    "id": "361acbf1-f034-40d1-a2e8-95efbb5e116e",
+    "data": [
+      {
+        "text": "which date ?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "4e584c63-5939-410e-bfb5-9ba60c306334",
+    "data": [
+      {
+        "text": "my last transaction date in savings",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "62fceb7e-8163-4492-9b31-848fc1fd7cb0",
+    "data": [
+      {
+        "text": "which date is my last transaction date in ",
+        "userDefined": false
+      },
+      {
+        "text": "savings",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1509633896
+  },
+  {
+    "id": "96c06945-3830-4112-ae70-4e2ece730875",
+    "data": [
+      {
+        "text": "which date is my ",
+        "userDefined": false
+      },
+      {
+        "text": "last transaction",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " ?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1509633896
+  }
+]

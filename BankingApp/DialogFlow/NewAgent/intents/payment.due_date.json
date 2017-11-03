@@ -1,0 +1,55 @@
+{
+  "id": "f15a146f-7f12-4961-b0d5-b3fb66a4754b",
+  "name": "payment.due_date",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "payment.due_date",
+      "affectedContexts": [
+        {
+          "name": "due_date",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "balance",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "5a952ee3-73e3-4526-b903-82255623bc59",
+          "required": true,
+          "dataType": "@account",
+          "name": "account",
+          "value": "$account",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Which card?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509086323256,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -60,6 +60,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.Random;
 
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -126,7 +127,7 @@ public class ConversationService extends Service {
     private static final int PORT = 443;
 
     /** The unique ID for this conversation; this should be changed as the session changes. */
-    private static final int SESSION_ID = 1234567;
+    private static final int SESSION_ID = new Random().nextInt();
 
     private final ConversationBinder mBinder = new ConversationBinder();
 

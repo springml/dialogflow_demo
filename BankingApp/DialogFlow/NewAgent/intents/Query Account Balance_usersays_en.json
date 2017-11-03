@@ -1,0 +1,273 @@
+[
+  {
+    "id": "ab233601-86f4-43fc-b672-5469ee06b865",
+    "data": [
+      {
+        "text": "what about my ",
+        "userDefined": false
+      },
+      {
+        "text": "savings",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": false
+      },
+      {
+        "text": " account?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "7a6de80c-39e3-404b-a745-cebfbbd5b648",
+    "data": [
+      {
+        "text": "what about my ",
+        "userDefined": false
+      },
+      {
+        "text": "checking account",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "17393bf1-5fff-4ffc-b4bb-3ab45a28ee38",
+    "data": [
+      {
+        "text": "How much money do I have in my ",
+        "userDefined": false
+      },
+      {
+        "text": "savings",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": true
+      },
+      {
+        "text": " account?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1509450397
+  },
+  {
+    "id": "4b22359a-ce44-444b-8e3e-586d48d4fafb",
+    "data": [
+      {
+        "text": "what\u0027s the ",
+        "userDefined": false
+      },
+      {
+        "text": "balance",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      },
+      {
+        "text": " in my ",
+        "userDefined": false
+      },
+      {
+        "text": "shopping card",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ebb997e3-81cb-48df-ba03-2ae1ef11f45d",
+    "data": [
+      {
+        "text": "show balance",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e5814521-b71c-46ac-8f61-01f8d576f0e1",
+    "data": [
+      {
+        "text": "balance",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4085595f-4b50-4a34-a0b0-93535e7fc9b1",
+    "data": [
+      {
+        "text": "show available money on my ",
+        "userDefined": false
+      },
+      {
+        "text": "checking",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": false
+      },
+      {
+        "text": " account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "df3a2536-4e5d-4d23-98f8-0bd7c1e63f25",
+    "data": [
+      {
+        "text": "check",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " money on my ",
+        "userDefined": false
+      },
+      {
+        "text": "card for shopping",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a6e8816f-d352-40f4-9241-a7df5d85bf06",
+    "data": [
+      {
+        "text": "can you show balance on ",
+        "userDefined": false
+      },
+      {
+        "text": "gas stations card",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "700a3136-4097-434e-9991-f68fb3806400",
+    "data": [
+      {
+        "text": "check",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " my ",
+        "userDefined": false
+      },
+      {
+        "text": "savings",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": false
+      },
+      {
+        "text": " account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "08ccba99-8cda-4cc8-8c0f-e4f30eaadcd7",
+    "data": [
+      {
+        "text": "how much money do I have on ",
+        "userDefined": false
+      },
+      {
+        "text": "card for restaurants",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3c330493-5448-43ca-bf74-fc6d72609447",
+    "data": [
+      {
+        "text": "how much money is available on my bank account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "f1ff87f9-1faf-42dd-9797-62ea86d80ae4",
+    "data": [
+      {
+        "text": "check my account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "bf678565-d0e5-48ae-8476-9e01aec82ae5",
+    "data": [
+      {
+        "text": "check how much money do i have",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "fbd51303-7d9b-442d-b152-80652871aed7",
+    "data": [
+      {
+        "text": "check my balance",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

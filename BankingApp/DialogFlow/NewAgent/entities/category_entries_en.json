@@ -1,0 +1,58 @@
+[
+  {
+    "value": "ATM Withdrawals",
+    "synonyms": [
+      "ATM Withdrawals"
+    ]
+  },
+  {
+    "value": "Shopping",
+    "synonyms": [
+      "Shopping"
+    ]
+  },
+  {
+    "value": "Restaurants",
+    "synonyms": [
+      "Eating Out",
+      "Restaurants"
+    ]
+  },
+  {
+    "value": "Taxes",
+    "synonyms": [
+      "Taxes"
+    ]
+  },
+  {
+    "value": "Transactions",
+    "synonyms": [
+      "Transactions"
+    ]
+  },
+  {
+    "value": "Auto",
+    "synonyms": [
+      "Car",
+      "Auto"
+    ]
+  },
+  {
+    "value": "Travel",
+    "synonyms": [
+      "Travel"
+    ]
+  },
+  {
+    "value": "Payroll",
+    "synonyms": [
+      "Payroll"
+    ]
+  },
+  {
+    "value": "Utilities",
+    "synonyms": [
+      "Utilities"
+    ]
+  }
+]

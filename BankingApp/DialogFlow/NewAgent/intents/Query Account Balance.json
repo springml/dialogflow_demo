@@ -1,0 +1,86 @@
+{
+  "id": "e43a1f20-41d4-4e79-ad87-8d88221daedc",
+  "name": "Query Account Balance",
+  "auto": true,
+  "contexts": [
+    "balance"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "account.balance.check",
+      "affectedContexts": [
+        {
+          "name": "balance",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "d306f68e-a198-4470-80f1-37e8bc821cea",
+          "required": true,
+          "dataType": "@account",
+          "name": "accType",
+          "value": "$accType",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Which account?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "a09f0cc0-e696-4e1b-bf76-0226bf676559",
+          "required": false,
+          "dataType": "@sys.number-integer",
+          "name": "userId",
+          "value": "#balance.userId",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is your user ID?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "69031429-3ca5-4b7d-8bf3-cbead048c71f",
+          "required": false,
+          "dataType": "@query",
+          "name": "query",
+          "value": "getAccBalance",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "what do you want to check in bank?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "78d41d71-20ed-4f20-a1bf-56892fb4c0eb",
+          "name": "authenticated",
+          "value": "#balance.isAuthenticated",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509450397,
+  "fallbackIntent": false,
+  "events": []
+}

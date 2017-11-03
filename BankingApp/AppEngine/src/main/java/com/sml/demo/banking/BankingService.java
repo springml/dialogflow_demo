@@ -69,7 +69,7 @@ public class BankingService {
                 new PhoneNumber(FROM_MOBILENO),
                 "Here is your code :"+ otpManager.generateOtpForUser(userId)).create();
         System.out.println("sms is being sent");
-        WebhookResponse response = new WebhookResponse("OTP sent to your mobile number.Please confirm it","OTP sent to your mobile number.Please confirm it");
+        WebhookResponse response = new WebhookResponse("OTP sent to your mobile number. Please confirm it.","OTP sent to your mobile number. Please confirm it.");
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
         contexts.add(contextOut);
@@ -130,7 +130,7 @@ public class BankingService {
             prop.put("CustomerName",BankStore.getInstance().getProperty(userId,"CustomerName"));
 
             BankStore.getInstance().updateEntity(userId,prop);
-            response = new WebhookResponse("The amount is trasferred and the"+toAcc+" has current balance of "+toAccBalance,"The amount is trasferred and the"+toAcc+" has current balance of "+toAccBalance);
+            response = new WebhookResponse("The amount is transferred and the "+toAcc+" has current balance of "+toAccBalance,"The amount is transferred and the "+toAcc+" has current balance of "+toAccBalance);
         }
         else{
             response = new WebhookResponse("problem transferring amount...Insufficient Balance","problem transferring amount...Insufficient Balance");
@@ -152,7 +152,7 @@ public class BankingService {
             propName = "CheckingAccountLastTransaction";
 
         String lastTransaction = BankStore.getInstance().getProperty(userId,propName);
-        response = new WebhookResponse("The last transaction done is "+lastTransaction,"The last transaction done is "+lastTransaction);
+        response = new WebhookResponse("Last transaction: "+lastTransaction,"Last transaction: "+lastTransaction);
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
         contexts.add(contextOut);
@@ -169,7 +169,7 @@ public class BankingService {
             propName = "CheckingAccountLastTransactionDate";
 
         String lastTransaction = BankStore.getInstance().getProperty(userId,propName);
-        response = new WebhookResponse("The last transaction is done on "+lastTransaction,"The last transaction done is "+lastTransaction);
+        response = new WebhookResponse("The last transaction was  on: "+lastTransaction,"The last transaction was on: "+lastTransaction);
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
         contexts.add(contextOut);
@@ -187,7 +187,7 @@ public class BankingService {
 
             }
             String customerName = BankStore.getInstance().getProperty(userId,"CustomerName");
-            response = new WebhookResponse("The user :"+customerName +" has current balance of "+accBalance,"The user :"+userId +" has current balance of "+accBalance);
+            response = new WebhookResponse("Your "+accountType +" account has a balance of "+accBalance,"Your "+accountType +" account has a balance of "+accBalance);
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
         contexts.add(contextOut);

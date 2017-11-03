@@ -1,0 +1,37 @@
+[
+  {
+    "value": "getAccBalance",
+    "synonyms": [
+      "getAccBalance",
+      "balance",
+      "Balance",
+      "show balance"
+    ]
+  },
+  {
+    "value": "transfer",
+    "synonyms": [
+      "transfer",
+      "transfer",
+      "tfr",
+      "Transfer"
+    ]
+  },
+  {
+    "value": "lasttransaction",
+    "synonyms": [
+      "lasttransaction",
+      "LastTransaction",
+      "final transaction",
+      "last transaction"
+    ]
+  },
+  {
+    "value": "lasttransactiondate",
+    "synonyms": [
+      "lasttransactiondate",
+      "last transaction date",
+      "final transaction date"
+    ]
+  }
+]

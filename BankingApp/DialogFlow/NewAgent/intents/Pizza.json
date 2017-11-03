@@ -1,0 +1,99 @@
+{
+  "id": "63e369a3-ba70-4d23-b37c-17747b149284",
+  "name": "Pizza",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "pizza",
+      "affectedContexts": [
+        {
+          "name": "pizza_order",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "a57184a1-5aa3-4515-a3ea-4329063b2844",
+          "required": true,
+          "dataType": "@size",
+          "name": "size",
+          "value": "$size",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What size pizza would you like to order?"
+            },
+            {
+              "lang": "en",
+              "value": "Would you like a large, medium, or small pizza?"
+            }
+          ]
+        },
+        {
+          "id": "cc920f02-6d3e-4124-979c-60b3bf4d75d6",
+          "required": true,
+          "dataType": "@topping",
+          "name": "topping",
+          "value": "$topping",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What toppings would you like?"
+            }
+          ],
+          "isList": true
+        },
+        {
+          "id": "a4e9cb3b-b303-45f5-997e-3be1f7304da1",
+          "required": true,
+          "dataType": "@sys.location",
+          "name": "address",
+          "value": "$address",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the delivery address?"
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "No problem. Getting a $size pizza with $topping and delivering to $address."
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Reply \"check\" to place your order. Reply \"cancel\" to cancel your order. You can change your delivery address as well."
+        },
+        {
+          "type": 2,
+          "platform": "facebook",
+          "lang": "en",
+          "title": "No problem. Getting a $size pizza with $topping and delivering to $address.",
+          "replies": [
+            "Place order",
+            "Cancel"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509044026560,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "order_pizza"
+    }
+  ]
+}

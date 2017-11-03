@@ -1,0 +1,58 @@
+[
+  {
+    "value": "capricciosa",
+    "synonyms": [
+      "capricciosa"
+    ]
+  },
+  {
+    "value": "four cheese",
+    "synonyms": [
+      "four cheese",
+      "quattro formaggi"
+    ]
+  },
+  {
+    "value": "frutti di mare",
+    "synonyms": [
+      "frutti di mare"
+    ]
+  },
+  {
+    "value": "margherita",
+    "synonyms": [
+      "margherita",
+      "marhegerita"
+    ]
+  },
+  {
+    "value": "marinara",
+    "synonyms": [
+      "marinara"
+    ]
+  },
+  {
+    "value": "pepperoni",
+    "synonyms": [
+      "pepperoni",
+      "peperoni"
+    ]
+  },
+  {
+    "value": "quattro stagioni",
+    "synonyms": [
+      "quattro stagioni"
+    ]
+  },
+  {
+    "value": "vegetarian",
+    "synonyms": [
+      "vegetarian",
+      "vegetariana",
+      "vege",
+      "veg",
+      "veggie",
+      "vegetable"
+    ]
+  }
+]

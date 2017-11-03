@@ -1,0 +1,104 @@
+[
+  {
+    "id": "b333f8da-ba95-480d-ba10-803645e78d7d",
+    "data": [
+      {
+        "text": "Order pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "537d092b-e475-4239-af00-e00bae2d8e5d",
+    "data": [
+      {
+        "text": "Pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "66be2408-20ef-4f65-91af-0bcecafd0d40",
+    "data": [
+      {
+        "text": "Get me a ",
+        "userDefined": false
+      },
+      {
+        "text": "large",
+        "alias": "size",
+        "meta": "@size",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "mushrooms",
+        "alias": "topping",
+        "meta": "@topping",
+        "userDefined": false
+      },
+      {
+        "text": " for ",
+        "userDefined": false
+      },
+      {
+        "text": "1 1st st, New York, NY",
+        "alias": "address",
+        "meta": "@sys.location",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "63d29e8b-01f3-4703-acc2-cb5ac92ae544",
+    "data": [
+      {
+        "text": "I\u0027d like to order a ",
+        "userDefined": false
+      },
+      {
+        "text": "large",
+        "alias": "size",
+        "meta": "@size",
+        "userDefined": false
+      },
+      {
+        "text": " pizza with ",
+        "userDefined": false
+      },
+      {
+        "text": "mushrooms",
+        "alias": "topping",
+        "meta": "@topping",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "66acdf10-af71-451f-aaf7-9c7becfdb27f",
+    "data": [
+      {
+        "text": "I\u0027d like a @size:size pizza",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": true,
+    "count": 0,
+    "updated": 0
+  }
+]

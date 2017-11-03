@@ -15,7 +15,7 @@
   limitations under the License.
 -->
 <resources>
-    <string name="app_name">Conversation</string>
+    <string name="app_name">Banking Chatbot</string>
     <string name="hint_text">Write a message</string>
     <string name="hint_audio">Speak</string>
     <string name="permission_message">This app needs to record audio and recognize your speech.</string>

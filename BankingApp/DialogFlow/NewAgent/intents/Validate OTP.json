@@ -1,0 +1,70 @@
+{
+  "id": "7a2aa93d-ffff-4430-86c0-812915717376",
+  "name": "Validate OTP",
+  "auto": true,
+  "contexts": [
+    "balance"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "account.balance.check",
+      "affectedContexts": [
+        {
+          "name": "balance",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "b480d8e0-b8d8-4e66-953c-508f292ffd2b",
+          "dataType": "@account",
+          "name": "accType",
+          "value": "#balance.accType",
+          "isList": false
+        },
+        {
+          "id": "55476d39-17ec-474a-a85c-5c1dc19e24ec",
+          "dataType": "@sys.number-integer",
+          "name": "otp",
+          "value": "$otp",
+          "isList": false
+        },
+        {
+          "id": "b9c166bb-cfc4-4b82-a531-d48811e30b9c",
+          "name": "userId",
+          "value": "#balance.userId",
+          "isList": false
+        },
+        {
+          "id": "0c69b9c8-6915-4117-927e-585aa1bad6f9",
+          "name": "query",
+          "value": "#balance.query",
+          "isList": false
+        },
+        {
+          "id": "1fce8fac-8f4e-4a2f-b36a-a960ff6c5bb7",
+          "name": "authenticated",
+          "value": "#balance.isAuthenticated",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509086732,
+  "fallbackIntent": false,
+  "events": []
+}

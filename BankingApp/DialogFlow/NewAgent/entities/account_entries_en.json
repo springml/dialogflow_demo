@@ -1,0 +1,51 @@
+[
+  {
+    "value": "savings",
+    "synonyms": [
+      "saving",
+      "savings"
+    ]
+  },
+  {
+    "value": "checking account",
+    "synonyms": [
+      "checkings",
+      "checking",
+      "checking account"
+    ]
+  },
+  {
+    "value": "Card for gas stations",
+    "synonyms": [
+      "Card for gas stations",
+      "gas stations",
+      "gas stations card",
+      "gas station card"
+    ]
+  },
+  {
+    "value": "Card for restaurants",
+    "synonyms": [
+      "Card for restaurants",
+      "restaurants",
+      "restaurants card",
+      "restaurant card"
+    ]
+  },
+  {
+    "value": "Card for travel",
+    "synonyms": [
+      "Card for travel",
+      "travel",
+      "travel card"
+    ]
+  },
+  {
+    "value": "Card for shopping",
+    "synonyms": [
+      "Card for shopping",
+      "shopping",
+      "shopping card"
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "id": "14dcce84-9faa-4404-bfb1-6d31c40d5d07",
+  "name": "Query Last Transaction Date",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "3d254378-03d0-4ec9-8f4a-3d81129ec5cd",
+          "name": "query",
+          "value": "lasttransactiondate",
+          "isList": false
+        },
+        {
+          "id": "8ab47c2b-7b8a-4d94-9390-d02f020df8b9",
+          "name": "authenticated",
+          "value": "#balance.isAuthenticated",
+          "isList": false
+        },
+        {
+          "id": "a0d60e01-26b2-4fb0-a089-76264caf830c",
+          "name": "userId",
+          "value": "#balance.userId",
+          "isList": false
+        },
+        {
+          "id": "d08f585f-6b84-4db7-9115-ac7656282f96",
+          "required": true,
+          "dataType": "@account",
+          "name": "accType",
+          "value": "#balance.accType",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "which account?"
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509633896216,
+  "fallbackIntent": false,
+  "events": []
+}

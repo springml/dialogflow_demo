@@ -1,0 +1,49 @@
+{
+  "id": "075d3ae7-e4f2-4355-953d-1b62b451cdca",
+  "name": "Banking Help Start",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "balance",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "103fd01d-4437-4402-ac89-265a6ec474d4",
+          "required": true,
+          "dataType": "@sys.number-integer",
+          "name": "userId",
+          "value": "$userId",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is your user ID?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "what kind of bank operation do you want to do?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509630133018,
+  "fallbackIntent": false,
+  "events": []
+}

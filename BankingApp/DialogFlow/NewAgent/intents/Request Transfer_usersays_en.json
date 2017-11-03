@@ -1,0 +1,47 @@
+[
+  {
+    "id": "9701e9dd-7bb7-4ad0-9781-67e0419b718d",
+    "data": [
+      {
+        "text": "want to transfer amount",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "089baeff-c0cd-4751-a785-297d5523df29",
+    "data": [
+      {
+        "text": "transfer amount from",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1509632024
+  },
+  {
+    "id": "eb323f52-69ed-41a7-93cc-a99d3249c6ac",
+    "data": [
+      {
+        "text": "transfer amount from ",
+        "userDefined": false
+      },
+      {
+        "text": "Savings",
+        "alias": "fromAc",
+        "meta": "@account",
+        "userDefined": true
+      },
+      {
+        "text": " to Checking",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1509632024
+  }
+]

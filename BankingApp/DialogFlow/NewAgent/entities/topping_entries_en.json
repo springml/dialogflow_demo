@@ -1,0 +1,239 @@
+[
+  {
+    "value": "artichoke",
+    "synonyms": [
+      " artichoke",
+      " artichoke heart"
+    ]
+  },
+  {
+    "value": "bacon",
+    "synonyms": [
+      " bacon",
+      " smoked bacon"
+    ]
+  },
+  {
+    "value": "beef",
+    "synonyms": [
+      " beef",
+      " ground beef"
+    ]
+  },
+  {
+    "value": "bell pepper",
+    "synonyms": [
+      "bell pepper"
+    ]
+  },
+  {
+    "value": "broccoli",
+    "synonyms": [
+      "broccoli"
+    ]
+  },
+  {
+    "value": "capers",
+    "synonyms": [
+      "capers"
+    ]
+  },
+  {
+    "value": "cheddar",
+    "synonyms": [
+      "cheddar",
+      "cheddar cheese"
+    ]
+  },
+  {
+    "value": "cheese",
+    "synonyms": [
+      "cheese"
+    ]
+  },
+  {
+    "value": "chicken",
+    "synonyms": [
+      " chicken",
+      " chicken breast"
+    ]
+  },
+  {
+    "value": "chili pepper",
+    "synonyms": [
+      "chili pepper",
+      "chili"
+    ]
+  },
+  {
+    "value": "gorgonzola",
+    "synonyms": [
+      "gorgonzola",
+      "gorgonzola cheese"
+    ]
+  },
+  {
+    "value": "ham",
+    "synonyms": [
+      "ham"
+    ]
+  },
+  {
+    "value": "jalapeño",
+    "synonyms": [
+      "jalapeño",
+      "jalapeno",
+      "jalapeño pepper",
+      "jalapeno pepper"
+    ]
+  },
+  {
+    "value": "meat",
+    "synonyms": [
+      " meat",
+      " minsed meat",
+      " ground meat"
+    ]
+  },
+  {
+    "value": "meatball",
+    "synonyms": [
+      " meatball",
+      " meat ball"
+    ]
+  },
+  {
+    "value": "mozzarella",
+    "synonyms": [
+      "mozzarella",
+      "mozzarella cheese",
+      "fresh mozzarella cheese",
+      "fresh mozzarella"
+    ]
+  },
+  {
+    "value": "mushroom",
+    "synonyms": [
+      "mushroom"
+    ]
+  },
+  {
+    "value": "olives",
+    "synonyms": [
+      "olives",
+      "black olives",
+      "green olives"
+    ]
+  },
+  {
+    "value": "onion",
+    "synonyms": [
+      "onion"
+    ]
+  },
+  {
+    "value": "parmesan",
+    "synonyms": [
+      "parmesan",
+      "parmesan cheese"
+    ]
+  },
+  {
+    "value": "pecorino",
+    "synonyms": [
+      "pecorino",
+      "pecorino cheese"
+    ]
+  },
+  {
+    "value": "pepperoni",
+    "synonyms": [
+      "pepperoni"
+    ]
+  },
+  {
+    "value": "pineapple",
+    "synonyms": [
+      "pineapple"
+    ]
+  },
+  {
+    "value": "pork",
+    "synonyms": [
+      "pork",
+      "pork slice"
+    ]
+  },
+  {
+    "value": "prosciutto",
+    "synonyms": [
+      "prosciutto"
+    ]
+  },
+  {
+    "value": "salami",
+    "synonyms": [
+      "salami"
+    ]
+  },
+  {
+    "value": "sausage",
+    "synonyms": [
+      "sausage"
+    ]
+  },
+  {
+    "value": "seafood",
+    "synonyms": [
+      "seafood"
+    ]
+  },
+  {
+    "value": "shrimp",
+    "synonyms": [
+      "shrimp"
+    ]
+  },
+  {
+    "value": "spinach",
+    "synonyms": [
+      "spinach"
+    ]
+  },
+  {
+    "value": "sun dried tomato",
+    "synonyms": [
+      "sun dried tomato",
+      "dried tomato"
+    ]
+  },
+  {
+    "value": "tomato",
+    "synonyms": [
+      " tomato",
+      " fresh tomato"
+    ]
+  },
+  {
+    "value": "tuna",
+    "synonyms": [
+      "tuna"
+    ]
+  },
+  {
+    "value": "zucchini",
+    "synonyms": [
+      "zucchini"
+    ]
+  },
+  {
+    "value": "null",
+    "synonyms": [
+      "no",
+      "no extra topping",
+      "without extra toppings",
+      "none",
+      "skip toppings"
+    ]
+  }
+]

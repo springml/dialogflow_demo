@@ -1,0 +1,98 @@
+{
+  "id": "16fc5deb-fbba-4db4-81fa-0af8c4718490",
+  "name": "Request Transfer",
+  "auto": true,
+  "contexts": [
+    "balance"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "balance",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "5fec5b93-e939-4a46-817d-870aadca3b7a",
+          "required": true,
+          "dataType": "@account",
+          "name": "fromAc",
+          "value": "$fromAc",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Which account do you want to transfer from?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "22864a49-26e9-45bf-8d32-3e48be1be4de",
+          "required": true,
+          "dataType": "@account",
+          "name": "toAc",
+          "value": "$toAc",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What\u0027s the account you want to transfer it to?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "e91b91cf-8597-460e-8d9b-7988013f05bf",
+          "dataType": "@query",
+          "name": "query",
+          "value": "transfer",
+          "isList": false
+        },
+        {
+          "id": "36ab3249-d2d7-478e-8f67-44cfcf6bffaa",
+          "name": "userId",
+          "value": "#balance.userId",
+          "isList": false
+        },
+        {
+          "id": "8f9d8949-1dae-4d6b-a862-00486d42aca1",
+          "name": "authenticated",
+          "value": "#balance.isAuthenticated",
+          "isList": false
+        },
+        {
+          "id": "c340dedf-ddc4-410c-ad89-300bf961b516",
+          "required": true,
+          "dataType": "@sys.number-integer",
+          "name": "tfrAmount",
+          "value": "$tfrAmount",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What\u0027s the amount you want to transfer?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1509632024604,
+  "fallbackIntent": false,
+  "events": []
+}

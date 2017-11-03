@@ -1,0 +1,68 @@
+[
+  {
+    "id": "01719838-fa0b-4236-a0c3-ef2ff7e8b5ae",
+    "data": [
+      {
+        "text": "last transaction in ",
+        "userDefined": false
+      },
+      {
+        "text": "checking",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": true
+      },
+      {
+        "text": " account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1509633793
+  },
+  {
+    "id": "685d0662-4181-4162-9b39-7473d0237a04",
+    "data": [
+      {
+        "text": "check last transaction in ",
+        "userDefined": false
+      },
+      {
+        "text": "Checking",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": true
+      },
+      {
+        "text": " account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1509633793
+  },
+  {
+    "id": "d1f79b0c-3922-4761-89d0-9b322b8b7158",
+    "data": [
+      {
+        "text": "check last transaction in ",
+        "userDefined": false
+      },
+      {
+        "text": "savings",
+        "alias": "accType",
+        "meta": "@account",
+        "userDefined": true
+      },
+      {
+        "text": " account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1509633793
+  }
+]

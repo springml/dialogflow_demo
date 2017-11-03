@@ -1,0 +1,20 @@
+[
+  {
+    "value": "thin",
+    "synonyms": [
+      "thin"
+    ]
+  },
+  {
+    "value": "thick",
+    "synonyms": [
+      "thick"
+    ]
+  },
+  {
+    "value": "stuffed",
+    "synonyms": [
+      "stuffed"
+    ]
+  }
+]
