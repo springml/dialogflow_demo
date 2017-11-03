@@ -1,0 +1,22 @@
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 376-653-055
+76.21.2.107 - - [03/Nov/2017 05:03:54] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [03/Nov/2017 05:03:54] "GET /logo.png HTTP/1.1" 200 -
+76.21.2.107 - - [03/Nov/2017 05:04:25] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [03/Nov/2017 05:04:26] "GET /logo.png HTTP/1.1" 200 -
+76.21.2.107 - - [03/Nov/2017 05:06:16] "GET / HTTP/1.1" 200 -
+212.47.244.68 - - [03/Nov/2017 05:19:01] "GET http://www.bing.com HTTP/1.1" 301 -
+212.47.244.68 - - [03/Nov/2017 05:19:03] "GET http://www.bing.com/ HTTP/1.1" 200 -
+104.37.212.3 - - [03/Nov/2017 05:49:34] "GET /manager/html HTTP/1.1" 404 -
+163.172.149.131 - - [03/Nov/2017 05:51:41] "GET http://www.bing.com HTTP/1.1" 301 -
+163.172.149.131 - - [03/Nov/2017 05:51:42] "GET http://www.bing.com/ HTTP/1.1" 200 -
+76.21.2.107 - - [03/Nov/2017 06:41:05] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [03/Nov/2017 06:41:06] "GET /logo.png HTTP/1.1" 200 -
+212.47.244.68 - - [03/Nov/2017 06:48:25] "GET http://www.bing.com HTTP/1.1" 301 -
+212.47.244.68 - - [03/Nov/2017 06:48:27] "GET http://www.bing.com/ HTTP/1.1" 200 -
+76.21.2.107 - - [03/Nov/2017 07:01:51] "GET / HTTP/1.1" 200 -
+76.21.2.107 - - [03/Nov/2017 07:01:52] "GET /logo.png HTTP/1.1" 200 -
+163.172.149.131 - - [03/Nov/2017 07:20:57] "GET http://www.bing.com HTTP/1.1" 301 -
+163.172.149.131 - - [03/Nov/2017 07:20:58] "GET http://www.bing.com/ HTTP/1.1" 200 -

@@ -38,7 +38,6 @@
     var value = queryInput.value;
     queryInput.value = "";
     
-    DLPRequest(value);
 
     createQueryNode(value);
     var responseNode = createResponseNode();
@@ -46,7 +45,7 @@
     var response = sendRequest(value, sessionid)
     console.log(sessionid)
     console.log("This is after python function call")
-    
+    console.log(response); 
     var result_json = JSON.parse(response);
 
     
