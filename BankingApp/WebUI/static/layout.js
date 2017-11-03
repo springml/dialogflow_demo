@@ -37,6 +37,8 @@
 
     var value = queryInput.value;
     queryInput.value = "";
+    
+    DLPRequest(value);
 
     createQueryNode(value);
     var responseNode = createResponseNode();
@@ -46,10 +48,12 @@
     console.log("This is after python function call")
     
     var result_json = JSON.parse(response);
+
+    
     
     if (document.getElementById('jsonResponse') != null){
-	console.log('displaying payload')
-	setResponseJSON(atob(result_json["object"]));
+	     console.log('displaying payload')
+	     setResponseJSON(atob(result_json["object"]));
 	}
   
     setResponseOnNode(result_json["text"], responseNode);
@@ -81,7 +85,24 @@
     node.innerHTML = response ? response: ""
     //node.innerHTML = JSON.stringify(response, null, 2);
   }
+  function DLPRequest(value){
 
+    var request = {"items": [{"type": "text/plain", "value": "My ss number is 445-99-2233"} ], "replaceConfigs": [{"replaceWith": "[REDACTED]", "infoType": {"name": "US_SOCIAL_SECURITY_NUMBER"} } ], "inspectConfig": {"infoTypes": [], "minLikelihood": "LIKELIHOOD_UNSPECIFIED", "maxFindings": 0, "includeQuote": true } }
+    var xhttp = new XMLHttpRequest();
+    var access_token = "ya29.c.El_3BCYVDwQGbNsaFpq0E9-2GjfnOKNVLLsMkcWy4fsLdvBm57gxKwjWsSuV54fhIi2kGBFJU7ypxB55ckUoKqHwPJchf_K1fDW5Byl7bl-gEjdygRyFPnsvz_ue5wLWGQ";
+    var URL =  "https://dlp.googleapis.com/v2beta1/content:redact";
+
+    xhttp.open("GET", URL, false);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.setRequestHeader("Authorization", "Bearer " + access_token);
+    
+    xhttp.send(request);
+
+    console.log(xhttp.responseText)
+
+    return  xhttp.responseText;
+
+  }
   function sendRequest(value, sessionid) {
     //alert("in send req")
 
