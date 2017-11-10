@@ -43,9 +43,6 @@
     var responseNode = createResponseNode();
 
     var response = sendRequest(value, sessionid)
-    console.log(sessionid)
-    console.log("This is after python function call")
-    console.log(response); 
     var result_json = JSON.parse(response);
 
     
@@ -97,7 +94,6 @@
     
     xhttp.send(request);
 
-    console.log(xhttp.responseText)
 
     return  xhttp.responseText;
 
