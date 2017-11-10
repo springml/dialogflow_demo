@@ -1,3 +1,7 @@
 BankingApp/AppEngine/.idea
 BankingApp/AppEngine/target
 BankingApp/Android/build
+BankingApp/WebUI/detect_intent.pyc
+BankingApp/WebUI/nohup.out
+BankingApp/WebUI/TemplateUI/nohup.out
+BankingApp/WebUI/dflow_svc2.json
