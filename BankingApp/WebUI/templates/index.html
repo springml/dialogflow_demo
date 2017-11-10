@@ -224,6 +224,16 @@
          </div>
       </div>
       <p>
+<script>
+  $(document).keydown(function(event) {
+       if (event.keyCode == 13) {
+         var win_height = $('#main-wrapper').prop("scrollHeight");
+         if(win_height >= 500)
+           $('html, body').scrollTop( $(document).height() );
+       }
+  });
+
+</script>
          <script defer src="layout.js"></script>
    </body>
 </html>
