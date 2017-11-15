@@ -12,6 +12,16 @@ public class Parameters
     private String toAc;
     private String accType;
 
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    private String mobileNumber;
+
     public String getAccType() {
         return accType;
     }
@@ -54,6 +64,16 @@ public class Parameters
     }
 
     private boolean authenticated;
+
+    public boolean isMobileNoVerified() {
+        return mobileNoVerified;
+    }
+
+    public void setMobileNoVerified(boolean mobileNoVerified) {
+        this.mobileNoVerified = mobileNoVerified;
+    }
+
+    private boolean mobileNoVerified;
     public String getOtp() {
         return otp;
     }

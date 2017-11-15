@@ -59,17 +59,25 @@ public class BankingService {
 
     }
 
-    public WebhookResponse sendAuthCode(String userId) {
-        System.out.println("the account id is "+ACCOUNT_SID);
-        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+    public WebhookResponse sendAuthCode(String userId,String mobileNumber) {
+        String outputMessage = "";
+        if(this.validateMobile(userId,mobileNumber)) {
+            System.out.println("the account id is " + ACCOUNT_SID);
+            Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
-       String mobileNo = BankStore.getInstance().getProperty(userId,"MobileNumber");
-        System.out.println("the mobile no retrieved for the account is"+mobileNo);
-        Message message = Message.creator(  new PhoneNumber(mobileNo),
-                new PhoneNumber(FROM_MOBILENO),
-                "Here is your code :"+ otpManager.generateOtpForUser(userId)).create();
-        System.out.println("sms is being sent");
-        WebhookResponse response = new WebhookResponse("OTP sent to your mobile number. Please confirm it.","OTP sent to your mobile number. Please confirm it.");
+            String mobileNo = BankStore.getInstance().getProperty(userId, "MobileNumber");
+            System.out.println("the mobile no retrieved for the account is" + mobileNo);
+            Message message = Message.creator(new PhoneNumber(mobileNo),
+                    new PhoneNumber(FROM_MOBILENO),
+                    "Here is your code :" + otpManager.generateOtpForUser(userId)).create();
+            System.out.println("sms is being sent");
+            outputMessage = "Phone number matches our records.OTP sent to your mobile number. Please confirm it.";
+        }
+        else{
+            outputMessage = "Phone number does not match our records. We cannot serve your request.";
+
+        }
+        WebhookResponse response = new WebhookResponse(outputMessage,outputMessage);
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
         contexts.add(contextOut);
@@ -83,7 +91,7 @@ public class BankingService {
         if(otpManager.isValidOtp(userId,otp)){
             accBalance = Long.parseLong(BankStore.getInstance().getProperty(userId,"AccountBalance"));
             String customerName = BankStore.getInstance().getProperty(userId,"CustomerName");
-            response = new WebhookResponse("The user :"+customerName +" has current balance of "+accBalance,"The user :"+userId +" has current balance of "+accBalance);
+            response = new WebhookResponse("The user :"+customerName +" has current balance of $"+accBalance+" USD","The user :"+userId +" has current balance of $"+accBalance+" USD");
         }
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
@@ -102,17 +110,17 @@ public class BankingService {
         String lastCheckingTransactionproperty ="CheckingAccountLastTransaction";
         String lastCheckingTransactionDateproperty ="CheckingAccountLastTransactionDate";
 
-        String lastSavingsTransactionpropertyValue =""+tfrAmt+" debit";
+        String lastSavingsTransactionpropertyValue =""+tfrAmt+" USD debit";
         String lastSavingsTransactionDatepropertyValue =""+new Date().toString();
-        String lastCheckingTransactionpropertyValue =""+tfrAmt+" credit";
+        String lastCheckingTransactionpropertyValue ="$"+tfrAmt+" USD credit";
         String lastCheckingTransactionDatepropertyValue =lastSavingsTransactionDatepropertyValue;
 
         WebhookResponse response = new WebhookResponse("problem transferring amount","problem transferring amount");
         if(!fromAcc.equalsIgnoreCase("savings")){
             fromAccountProperty = "CheckingAccountBalance";
             toAccountProperty = "AccountBalance";
-            lastSavingsTransactionpropertyValue=""+tfrAmt+" credit";
-            lastCheckingTransactionpropertyValue=""+tfrAmt+" debit";
+            lastSavingsTransactionpropertyValue="$"+tfrAmt+" USD credit";
+            lastCheckingTransactionpropertyValue="$"+tfrAmt+" USD debit";
         }
         frmAccBalance = Long.parseLong(BankStore.getInstance().getProperty(userId,fromAccountProperty));
         toAccBalance = Long.parseLong(BankStore.getInstance().getProperty(userId,toAccountProperty));
@@ -130,7 +138,7 @@ public class BankingService {
             prop.put("CustomerName",BankStore.getInstance().getProperty(userId,"CustomerName"));
 
             BankStore.getInstance().updateEntity(userId,prop);
-            response = new WebhookResponse("The amount is transferred and the "+toAcc+" has current balance of "+toAccBalance,"The amount is transferred and the "+toAcc+" has current balance of "+toAccBalance);
+            response = new WebhookResponse("The amount is transferred and the "+toAcc+" has current balance of $"+toAccBalance+ " USD","The amount is transferred and the "+toAcc+" has current balance of $"+toAccBalance+" USD");
         }
         else{
             response = new WebhookResponse("problem transferring amount...Insufficient Balance","problem transferring amount...Insufficient Balance");
@@ -187,7 +195,7 @@ public class BankingService {
 
             }
             String customerName = BankStore.getInstance().getProperty(userId,"CustomerName");
-            response = new WebhookResponse("Your "+accountType +" account has a balance of "+accBalance,"Your "+accountType +" account has a balance of "+accBalance);
+            response = new WebhookResponse("Your "+accountType +" account has a balance of $"+accBalance+" USD","Your "+accountType +" account has a balance of $"+accBalance+" USD");
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
         contexts.add(contextOut);
@@ -198,6 +206,14 @@ public class BankingService {
     public boolean validateOtp(String userId,String otp){
         return otpManager.isValidOtp(userId,otp);
     }
+    public boolean validateMobile(String userId,String mobileNo){
+        String mobileNoFromStore = BankStore.getInstance().getProperty(userId,"MobileNumber");
+        return mobileNo.equalsIgnoreCase(mobileNoFromStore);
+
+
+
+    }
+
 
     public String addUser(String userId,String mobileNumber,String emailId){
         User usr = new User();
@@ -223,7 +239,7 @@ public class BankingService {
         Account acc = UserAccountManager.getAccountOfUser(usr);
         acc.creditAccount(amt);
 
-        return " Amount "+ amt+" is credited for user "+userId+" - current ac balance  is "+acc.getBalance();
+        return " Amount "+ amt+" is credited for user "+userId+" - current ac balance  is $"+acc.getBalance()+" USD";
     }
 
     public String debitAmountForUser(String userId,long amt){
@@ -232,7 +248,7 @@ public class BankingService {
         Account acc = UserAccountManager.getAccountOfUser(usr);
         acc.debitAccount(amt);
 
-        return " Amount "+ amt+" is debited from user "+userId+" - current ac balance  is "+acc.getBalance();
+        return " Amount $"+ amt+" USD is debited from user "+userId+" - current ac balance  is $"+acc.getBalance()+" USD";
     }
 
 }
