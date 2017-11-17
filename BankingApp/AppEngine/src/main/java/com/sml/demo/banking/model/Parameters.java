@@ -11,9 +11,18 @@ public class Parameters
     private String fromAc;
     private String toAc;
     private String accType;
+    private boolean route;
 
     public String getMobileNumber() {
         return mobileNumber;
+    }
+
+    public boolean isRoute() {
+        return route;
+    }
+
+    public void setRoute(boolean route) {
+        this.route = route;
     }
 
     public void setMobileNumber(String mobileNumber) {

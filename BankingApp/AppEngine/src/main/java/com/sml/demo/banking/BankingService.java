@@ -42,7 +42,7 @@ public class BankingService {
     @Autowired
     public OtpManager otpManager;
     public static void main(String[] args) {
-    BankingService bankingService = new BankingService();
+    /*BankingService bankingService = new BankingService();
         WebhookResponse response = bankingService.transferBalance("10001","savings","checking",100);
         System.out.println(response.getDisplayText());
         response = bankingService.checkLastTransaction("10001","savings");
@@ -53,12 +53,23 @@ public class BankingService {
         System.out.println(response.getDisplayText());
         response = bankingService.checkLastTransactionDate("10001","checking");
         System.out.println(response.getDisplayText());
+*/
+    String val = "+3 45 (34)79089";
+    String extractedVal = val.replaceAll("\\D+","");
 
+       System.out.println(extractedVal.substring(extractedVal.length()%10));
 
 
 
     }
 
+    private String extractLast10digitsOfMobile(String mobileNo){
+        String extractedVal = mobileNo.replaceAll("\\D+","");
+
+        return extractedVal.substring(extractedVal.length()%10);
+
+
+    }
     public WebhookResponse sendAuthCode(String userId,String mobileNumber) {
         String outputMessage = "";
         if(this.validateMobile(userId,mobileNumber)) {
@@ -77,7 +88,7 @@ public class BankingService {
             outputMessage = "Phone number does not match our records. We cannot serve your request.";
 
         }
-        WebhookResponse response = new WebhookResponse(outputMessage,outputMessage);
+        WebhookResponse response = new WebhookResponse(outputMessage,outputMessage,"java-webhook");
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
         contexts.add(contextOut);
@@ -87,11 +98,11 @@ public class BankingService {
 
     public WebhookResponse getAccBalance(String userId,String otp){
         long accBalance = 0l;
-        WebhookResponse response = new WebhookResponse("The user cannot be validated","the user cant be validated");
+        WebhookResponse response = new WebhookResponse("The user cannot be validated","the user cant be validated","java-webhook");
         if(otpManager.isValidOtp(userId,otp)){
             accBalance = Long.parseLong(BankStore.getInstance().getProperty(userId,"AccountBalance"));
             String customerName = BankStore.getInstance().getProperty(userId,"CustomerName");
-            response = new WebhookResponse("The user :"+customerName +" has current balance of $"+accBalance+" USD","The user :"+userId +" has current balance of $"+accBalance+" USD");
+            response = new WebhookResponse("The user :"+customerName +" has current balance of $"+accBalance+" USD","The user :"+userId +" has current balance of $"+accBalance+" USD","java-webhook");
         }
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
@@ -110,12 +121,12 @@ public class BankingService {
         String lastCheckingTransactionproperty ="CheckingAccountLastTransaction";
         String lastCheckingTransactionDateproperty ="CheckingAccountLastTransactionDate";
 
-        String lastSavingsTransactionpropertyValue =""+tfrAmt+" USD debit";
+        String lastSavingsTransactionpropertyValue ="$"+tfrAmt+" USD debit";
         String lastSavingsTransactionDatepropertyValue =""+new Date().toString();
         String lastCheckingTransactionpropertyValue ="$"+tfrAmt+" USD credit";
         String lastCheckingTransactionDatepropertyValue =lastSavingsTransactionDatepropertyValue;
 
-        WebhookResponse response = new WebhookResponse("problem transferring amount","problem transferring amount");
+        WebhookResponse response = new WebhookResponse("problem transferring amount","problem transferring amount","java-webhook");
         if(!fromAcc.equalsIgnoreCase("savings")){
             fromAccountProperty = "CheckingAccountBalance";
             toAccountProperty = "AccountBalance";
@@ -138,10 +149,10 @@ public class BankingService {
             prop.put("CustomerName",BankStore.getInstance().getProperty(userId,"CustomerName"));
 
             BankStore.getInstance().updateEntity(userId,prop);
-            response = new WebhookResponse("The amount is transferred and the "+toAcc+" has current balance of $"+toAccBalance+ " USD","The amount is transferred and the "+toAcc+" has current balance of $"+toAccBalance+" USD");
+            response = new WebhookResponse("The amount is transferred and the "+toAcc+" account has current balance of $"+toAccBalance+ " USD","The amount is transferred and the "+toAcc+" account has current balance of $"+toAccBalance+" USD","java-webhook");
         }
         else{
-            response = new WebhookResponse("problem transferring amount...Insufficient Balance","problem transferring amount...Insufficient Balance");
+            response = new WebhookResponse("problem transferring amount...Insufficient Balance","problem transferring amount...Insufficient Balance","java-webhook");
         }
 
         ContextOut contextOut = new ContextOut();
@@ -153,14 +164,14 @@ public class BankingService {
 
     public WebhookResponse checkLastTransaction(String userId,String accountType){
         long accBalance = 0l;
-        WebhookResponse response = new WebhookResponse("The user cannot be validated","the user cant be validated");
+        WebhookResponse response = new WebhookResponse("The user cannot be validated","the user cant be validated","java-webhook");
         String propName = "SavingsAccountLastTransaction";
 
         if(!accountType.equalsIgnoreCase("Savings"))
             propName = "CheckingAccountLastTransaction";
 
         String lastTransaction = BankStore.getInstance().getProperty(userId,propName);
-        response = new WebhookResponse("Last transaction: "+lastTransaction,"Last transaction: "+lastTransaction);
+        response = new WebhookResponse("Last transaction: "+lastTransaction,"Last transaction: "+lastTransaction,"java-webhook");
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
         contexts.add(contextOut);
@@ -170,14 +181,14 @@ public class BankingService {
 
     public WebhookResponse checkLastTransactionDate(String userId,String accountType){
         long accBalance = 0l;
-        WebhookResponse response = new WebhookResponse("The user cannot be validated","the user cant be validated");
+        WebhookResponse response = new WebhookResponse("The user cannot be validated","the user cant be validated","java-webhook");
         String propName = "SavingsAccountLastTransactionDate";
 
         if(!accountType.equalsIgnoreCase("Savings"))
             propName = "CheckingAccountLastTransactionDate";
 
         String lastTransaction = BankStore.getInstance().getProperty(userId,propName);
-        response = new WebhookResponse("The last transaction was  on: "+lastTransaction,"The last transaction was on: "+lastTransaction);
+        response = new WebhookResponse("The last transaction was  on: "+lastTransaction,"The last transaction was on: "+lastTransaction,"java-webhook");
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
         contexts.add(contextOut);
@@ -187,7 +198,7 @@ public class BankingService {
 
     public WebhookResponse getAccountBalance(String userId,String accountType){
         long accBalance = 0l;
-        WebhookResponse response = new WebhookResponse("The user cannot be validated","the user cant be validated");
+        WebhookResponse response = new WebhookResponse("The user cannot be validated","the user cant be validated","java-webhook");
             if(accountType.equalsIgnoreCase("Savings"))
             accBalance = Long.parseLong(BankStore.getInstance().getProperty(userId,"AccountBalance"));
             else{
@@ -195,7 +206,7 @@ public class BankingService {
 
             }
             String customerName = BankStore.getInstance().getProperty(userId,"CustomerName");
-            response = new WebhookResponse("Your "+accountType +" account has a balance of $"+accBalance+" USD","Your "+accountType +" account has a balance of $"+accBalance+" USD");
+            response = new WebhookResponse("Your "+accountType +" account has a balance of $"+accBalance+" USD","Your "+accountType +" account has a balance of $"+accBalance+" USD","java-webhook");
         ContextOut contextOut = new ContextOut();
         ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
         contexts.add(contextOut);
@@ -204,11 +215,13 @@ public class BankingService {
     }
 
     public boolean validateOtp(String userId,String otp){
+
         return otpManager.isValidOtp(userId,otp);
     }
     public boolean validateMobile(String userId,String mobileNo){
         String mobileNoFromStore = BankStore.getInstance().getProperty(userId,"MobileNumber");
-        return mobileNo.equalsIgnoreCase(mobileNoFromStore);
+       // String mob[] = mobileNo.split("(");
+        return extractLast10digitsOfMobile(mobileNo).equalsIgnoreCase(extractLast10digitsOfMobile(mobileNoFromStore));
 
 
 

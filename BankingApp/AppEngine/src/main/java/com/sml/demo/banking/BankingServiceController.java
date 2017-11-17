@@ -1,15 +1,12 @@
 package com.sml.demo.banking;
 
 import com.google.gson.Gson;
-import com.sml.demo.banking.model.ContextOut;
-import com.sml.demo.banking.model.Contexts;
-import com.sml.demo.banking.model.WebhookRequest;
-import com.sml.demo.banking.model.WebhookResponse;
+import com.sml.demo.banking.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -45,6 +42,7 @@ public class BankingServiceController {
         String fromAc = request.getResult().getParameters().getFromAc();
         String toAccount = request.getResult().getParameters().getToAc();
         String mobileNumber = request.getResult().getParameters().getMobileNumber();
+        boolean route =  request.getResult().getParameters().isRoute();
 
         long amtToTfr = request.getResult().getParameters().getTfrAmount();
 
@@ -61,14 +59,30 @@ public class BankingServiceController {
 
 
         WebhookResponse response = null;
+        if(route){
+            response = new WebhookResponse();//"","");
+            FollowupEvent actionEvent = new FollowupEvent();
+            HashMap<String,String> params = new HashMap<>();
+            params.put("test","testvalue");
+            actionEvent.setName(query+"Event");
+            actionEvent.setData(params);
+            response.setFollowUpEvent(actionEvent);
 
+            ContextOut contextOut = new ContextOut();
+
+            Gson gson = new Gson();
+            String responsejson = gson.toJson(response);
+            System.out.println(responsejson);
+            return ResponseEntity.ok(response);
+        }
         if(!isAuthenticated) {
             if("".equalsIgnoreCase(otp) || otp == null) {
                 response = bankingService.sendAuthCode(userId,mobileNumber);
                 outputCtxParams.put("isAuthenticated", "false");
                 response.getContextOut().get(0).setParameters(outputCtxParams);
-                response.getContextOut().get(0).setName("balance");
+                response.getContextOut().get(0).setName("bank");
                 response.getContextOut().get(0).setLifespan("10");
+                return ResponseEntity.ok(response);
             }
             else{
                 isAuthenticated = bankingService.validateOtp(userId,otp);
@@ -81,7 +95,7 @@ public class BankingServiceController {
                     response = bankingService.getAccountBalance(userId,accType);
                     outputCtxParams.put("isAuthenticated","true");
                     response.getContextOut().get(0).setParameters(outputCtxParams);
-                    response.getContextOut().get(0).setName("balance");
+                    response.getContextOut().get(0).setName("bank");
                     response.getContextOut().get(0).setLifespan("10");
 
                     break;
@@ -89,7 +103,7 @@ public class BankingServiceController {
                     response = bankingService.transferBalance(userId,  fromAc, toAccount, amtToTfr);
                     outputCtxParams.put("isAuthenticated","true");
                     response.getContextOut().get(0).setParameters(outputCtxParams);
-                    response.getContextOut().get(0).setName("balance");
+                    response.getContextOut().get(0).setName("bank");
                     response.getContextOut().get(0).setLifespan("10");
 
                     break;
@@ -98,7 +112,7 @@ public class BankingServiceController {
                     response = bankingService.checkLastTransaction(userId,  accType);
                     outputCtxParams.put("isAuthenticated","true");
                     response.getContextOut().get(0).setParameters(outputCtxParams);
-                    response.getContextOut().get(0).setName("balance");
+                    response.getContextOut().get(0).setName("bank");
                     response.getContextOut().get(0).setLifespan("10");
 
                     break;
@@ -106,7 +120,7 @@ public class BankingServiceController {
                     response = bankingService.checkLastTransactionDate(userId,  accType);
                     outputCtxParams.put("isAuthenticated","true");
                     response.getContextOut().get(0).setParameters(outputCtxParams);
-                    response.getContextOut().get(0).setName("balance");
+                    response.getContextOut().get(0).setName("bank");
                     response.getContextOut().get(0).setLifespan("10");
 
                     break;
@@ -115,9 +129,14 @@ public class BankingServiceController {
             }
         }
         else{
+            response = new WebhookResponse("User cannot be authenticated","User cannot be authenticated","java-webhook");
+            ContextOut contextOut = new ContextOut();
+            ArrayList<ContextOut> contexts = new ArrayList<ContextOut>();
+            contexts.add(contextOut);
+            response.setContextOut(contexts);
             outputCtxParams.put("isAuthenticated","false");
             response.getContextOut().get(0).setParameters(outputCtxParams);
-            response.getContextOut().get(0).setName("balance");
+            response.getContextOut().get(0).setName("bank");
             response.getContextOut().get(0).setLifespan("10");
         }
         Gson gson = new Gson();
@@ -126,6 +145,21 @@ public class BankingServiceController {
         return ResponseEntity.ok(response);
     }
 
+    public static void main(String args[]){
+        WebhookResponse response = new WebhookResponse();//"","");
+        FollowupEvent actionEvent = new FollowupEvent();
+        HashMap<String,String> params = new HashMap<>();
+        params.put("test","testvalue");
+        actionEvent.setName("Event");
+        actionEvent.setData(params);
+        response.setFollowUpEvent(actionEvent);
+
+        ContextOut contextOut = new ContextOut();
+
+        Gson gson = new Gson();
+        String responsejson = gson.toJson(response);
+        System.out.println(responsejson);
+    }
 
 
 }
